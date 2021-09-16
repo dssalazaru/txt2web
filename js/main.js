@@ -19,7 +19,7 @@ function printdata(info) {
     for (var i = 0; i < array.length; i++) {
         // Variables a mostrar en la pagina
         var list = array[i].replace(/List: /, '').replace(/,.*/, '');
-        var owners = array[i].replace(/.* Owners: /, '');
+        var owners = array[i].replace(/.*Owners: /, '');
         var n = i + 1
         // Imprimir fila de datos en la tabla
         if (list.length > 0) {
