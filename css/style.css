@@ -184,7 +184,10 @@ p {
 
 a {
   text-decoration: none;
-  margin-left: 10px;
+}
+
+nav a{
+  margin-left: 1em;
 }
 
 a:hover {
@@ -192,6 +195,7 @@ a:hover {
 }
 
 footer a {
+  margin-left: 10px;
   position: absolute;
 }
 
@@ -199,15 +203,15 @@ footer a:hover {
   text-shadow: 0 0 10px #00aaaa, 0 0 10px #00aaaa;
 }
 
-#error-file{
-  border: 1px solid #ff5555;
-
-  font-size: 2em;
+#error-file {
+  border: 2px solid #ff5555;
+  font-size: 1.2em;
   text-align: center;
-  margin: 4em 0;
+  margin: 5em 0;
   padding: 4em 0;
 }
-#error-file span{
+
+#error-file span {
   font-weight: bold;
   color: #ff5555;
   font-size: 140%;
@@ -578,10 +582,11 @@ fieldset {
   border-radius: 100%;
 }
 
-.up:hover{
+.up:hover {
   background: #00aaaacc;
 }
-.up:active{
+
+.up:active {
   background: #55ffff;
   color: #333;
 }
@@ -604,17 +609,12 @@ section {
   width: 50%;
 }
 
-#app {
-  font-size: 2em;
-  font-weight: bold;
-}
-
 footer div {
   background-color: #00000033;
 }
 
 tbody tr:hover {
-  background-color: #00aaaa !important;
+  background-color: #00aaaa88 !important;
 }
 
 /*# sourceMappingURL=bootstrap.css.map */

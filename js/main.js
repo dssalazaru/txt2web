@@ -1,21 +1,21 @@
 // Lectura de archivo de datos
-var file = 'info.txt' // <-- Ruta del archivo
+var file = 'infoadwdada.txt' // <-- Ruta del archivo
 
 fetch(file)
     .then(response => response.text())
     .then(text => printdata(text))
 
 function printdata(info) {
-    if (info.length > 300) { // Imprime en consola o genera aviso
-        console.log("Archivo cargado correctamente\nTamaño del archivo: " + info.length + "\nCreado por @dssalazaru");
+    if (info.length > 0) { // Imprime en consola o genera aviso
+        console.log("Procesando el archivo\nTamaño del archivo: " + info.length + "\nCreado por @dssalazaru");
     } else {
-        document.getElementById('content').innerHTML = `<pre id="error-file">Error al leer la información de: <span>${file}</span><pre>`;
+        errorFile()
     }
 
     // Ajuste de datos en Array
     var array = info.split("\n");
     var elem = document.getElementById('data');
-
+    
     for (var i = 0; i < array.length; i++) {
         // Variables a mostrar en la pagina
         var list = array[i].replace(/List: /, '').replace(/,.*/, '');
@@ -26,9 +26,17 @@ function printdata(info) {
             elem.innerHTML += `<tr><th scope="row" id="col1">${n}</th><td>${list}</td><td>${owners}</td></tr>`;
         }
     }
+    
     $(document).ready(function () {
         $('#tabla').DataTable();
     });
+    if (array[0] == '<!DOCTYPE html>'){errorFile()}
+}
+
+function errorFile(){
+    var elem = document.getElementById('content');
+    elem.innerHTML = `<pre id="error-file">Error al leer la información de: <span>${file}</span><pre>`;
+    console.error('Fallo la carga del archivo');
 }
 
 // Funcion volver arriba
