@@ -1,5 +1,5 @@
 // Lectura de archivo de datos
-var file = 'info.txt' // <-- Ruta del archivo
+var file = 'data.txt' // <-- Ruta del archivo
 
 fetch(file)
     .then(response => response.text())
